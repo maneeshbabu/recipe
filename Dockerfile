@@ -4,14 +4,10 @@ LABEL author="Maneesh Babu M"
 
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install pipenv
-
 RUN mkdir /app
 WORKDIR /app
-
 COPY . /app
-RUN pipenv install
-
+RUN pip install -r requirements.txt
 
 RUN adduser -D user
 USER user
