@@ -9,10 +9,9 @@ RUN pip install pipenv
 RUN mkdir /app
 WORKDIR /app
 
-COPY Pipfile .
+COPY . /app
 RUN pipenv install
 
-COPY ./app /app
 
 RUN adduser -D user
 USER user
